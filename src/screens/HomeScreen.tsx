@@ -169,7 +169,13 @@ const HomeHeader = React.memo(({
     <View style={{ paddingTop: SPACING.sm }}>
         <View style={styles.header}>
             <View style={styles.titleContainer}>
-                <Text style={[styles.title, { color: colors.text }]}>VelNotes</Text>
+                <View style={styles.logoContainer}>
+                    <Image
+                        source={require('../../assets/logo.png')}
+                        style={styles.logo}
+                    />
+                    <Text style={[styles.title, { color: colors.text }]}>VelNotes</Text>
+                </View>
                 <TouchableOpacity onPress={toggleTheme} style={styles.themeToggle}>
                     <LinearGradient
                         colors={colors.primaryGradient as any}
@@ -371,8 +377,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: SPACING.md,
     },
+    logoContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    logo: {
+        width: 40,
+        height: 40,
+        marginRight: SPACING.sm,
+        borderRadius: BORDER_RADIUS.sm,
+    },
     title: {
-        fontSize: 36,
+        fontSize: 32,
         fontWeight: '900',
         letterSpacing: -1,
     },
